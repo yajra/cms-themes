@@ -1,9 +1,9 @@
 {
-  "name": "Default",
+  "name": "AdminLTE",
   "theme": "default",
   "type": "backend",
   "version": "1.0.0",
-  "description": "Default CMS Theme.",
+  "description": "Default CMS Backend Theme.",
   "date": "1 June 2016",
   "author": {
     "name": "Arjay Angeles",

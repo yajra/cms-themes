@@ -55,6 +55,16 @@ class CollectionRepository implements Repository
     }
 
     /**
+     * Get themes base path.
+     *
+     * @return string
+     */
+    public function getBasePath()
+    {
+        return $this->config->get('themes.path.base');
+    }
+
+    /**
      * Register theme.json file.
      *
      * @param \SplFileInfo $file
@@ -67,6 +77,7 @@ class CollectionRepository implements Repository
         $validator = $this->getValidationFactory()->make($theme, [
             'name'        => 'required',
             'theme'       => 'required',
+            'type'        => 'required',
             'version'     => 'required',
             'description' => 'required',
             'positions'   => 'required',
@@ -76,9 +87,10 @@ class CollectionRepository implements Repository
             throw new \Exception('Invalid theme configuration: ' . $file->getRealPath());
         }
 
-        $this->themes[$theme['theme']] = new Theme(
+        $this->themes[$theme['type'].'.'.$theme['theme']] = new Theme(
             $theme['name'],
             $theme['theme'],
+            $theme['type'],
             $theme['version'],
             $theme['description'],
             (array) $theme['positions'],
@@ -147,15 +159,5 @@ class CollectionRepository implements Repository
     public function getDirectoryPath($theme)
     {
         return $this->getBasePath() . DIRECTORY_SEPARATOR . $theme;
-    }
-
-    /**
-     * Get themes base path.
-     *
-     * @return string
-     */
-    public function getBasePath()
-    {
-        return $this->config->get('themes.path.base');
     }
 }

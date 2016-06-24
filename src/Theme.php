@@ -32,19 +32,26 @@ class Theme extends Fluent
     public $positions = [];
 
     /**
+     * @var
+     */
+    private $type;
+
+    /**
      * Theme constructor.
      *
      * @param string $name
      * @param string $theme
+     * @param string $type
      * @param string $version
      * @param string $description
      * @param array $positions
      * @param array|object $attributes
      */
-    public function __construct($name, $theme, $version, $description, array $positions, $attributes = [])
+    public function __construct($name, $theme, $type, $version, $description, array $positions, $attributes = [])
     {
         $this->name        = $name;
         $this->theme       = $theme;
+        $this->type        = $type;
         $this->version     = $version;
         $this->description = $description;
         $this->positions   = $positions;

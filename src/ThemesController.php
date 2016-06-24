@@ -32,7 +32,7 @@ class ThemesController extends Controller
      */
     public function index()
     {
-        $themes = $this->themes->all();
+        $themes = $this->themes->all()->where('type', 'frontend');
 
         return view('themes::index', compact('themes'));
     }
