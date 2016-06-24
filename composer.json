@@ -27,7 +27,10 @@
     "autoload": {
         "psr-4": {
             "Yajra\\CMS\\Themes\\": "src"
-        }
+        },
+        "files": [
+          "src/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
