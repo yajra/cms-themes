@@ -27,6 +27,7 @@ return [
     */
 
     'path' => [
+        'base'     => base_path('themes'),
         'backend'  => base_path('themes/backend'),
         'frontend' => base_path('themes/frontend'),
     ],

@@ -48,7 +48,7 @@ class CollectionRepository implements Repository
      */
     public function scan()
     {
-        $files = $this->finder->create()->in($this->config->get('theme.path'))->name('theme.json');
+        $files = $this->finder->create()->in($this->getBasePath())->name('theme.json');
         foreach ($files as $file) {
             $this->register($file);
         }
@@ -99,20 +99,20 @@ class CollectionRepository implements Repository
     /**
      * Get current frontend theme.
      *
-     * @return \Yajra\CMS\Theme\Theme
-     * @throws \Yajra\CMS\Exceptions\ThemeNotFoundException
+     * @return \Yajra\CMS\Themes\Theme
+     * @throws \Yajra\CMS\Themes\Exceptions\ThemeNotFoundException
      */
     public function current()
     {
-        return $this->findOrFail($this->config->get('theme.frontend'));
+        return $this->findOrFail($this->config->get('themes.frontend'));
     }
 
     /**
      * Find or fail a theme.
      *
      * @param string $theme
-     * @return \Yajra\CMS\Theme\Theme
-     * @throws \Yajra\CMS\Exceptions\ThemeNotFoundException
+     * @return \Yajra\CMS\Themes\Theme
+     * @throws \Yajra\CMS\Themes\Exceptions\ThemeNotFoundException
      */
     public function findOrFail($theme)
     {
@@ -156,6 +156,6 @@ class CollectionRepository implements Repository
      */
     public function getBasePath()
     {
-        return $this->config->get('theme.path');
+        return $this->config->get('themes.path.base');
     }
 }

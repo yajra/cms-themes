@@ -34,7 +34,7 @@ class ThemesController extends Controller
     {
         $themes = $this->themes->all();
 
-        return view('administrator.themes.index', compact('themes'));
+        return view('themes::index', compact('themes'));
     }
 
     /**

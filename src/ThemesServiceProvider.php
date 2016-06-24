@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 use Symfony\Component\Finder\Finder;
 use Yajra\CMS\Themes\Repositories\CollectionRepository;
 use Yajra\CMS\Themes\Repositories\Repository;
-use Yajra\CMS\View\ThemeViewFinder;
 
 class ThemesServiceProvider extends ServiceProvider
 {
@@ -36,8 +35,8 @@ class ThemesServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__ . './config/themes.php' => config_path('themes.php'),
-        ]);
+            __DIR__ . '/config/themes.php' => config_path('themes.php'),
+        ], 'cms-themes');
         $this->mergeConfigFrom(__DIR__ . '/config/themes.php', 'themes');
     }
 
@@ -48,9 +47,9 @@ class ThemesServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/resources/views' => resource_path('views/vendor/themes'),
-            __DIR__ . '/themes/backend'  => config('theme.path.backend'),
-            __DIR__ . '/themes/frontend' => config('theme.path.frontend'),
-        ]);
+            __DIR__ . '/themes/backend'  => config('themes.path.backend'),
+            __DIR__ . '/themes/frontend' => config('themes.path.frontend'),
+        ], 'cms-themes');
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'themes');
     }
 

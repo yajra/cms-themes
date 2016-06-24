@@ -27,8 +27,8 @@ interface Repository
     /**
      * Get current frontend theme.
      *
-     * @return \Yajra\CMS\Theme\Theme
-     * @throws \Yajra\CMS\Exceptions\ThemeNotFoundException
+     * @return \Yajra\CMS\Themes\Theme
+     * @throws \Yajra\CMS\Themes\Exceptions\ThemeNotFoundException
      */
     public function current();
 
@@ -36,8 +36,8 @@ interface Repository
      * Find or fail a theme.
      *
      * @param string $theme
-     * @return \Yajra\CMS\Theme\Theme
-     * @throws \Yajra\CMS\Exceptions\ThemeNotFoundException
+     * @return \Yajra\CMS\Themes\Theme
+     * @throws \Yajra\CMS\Themes\Exceptions\ThemeNotFoundException
      */
     public function findOrFail($theme);
 
