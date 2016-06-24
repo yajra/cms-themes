@@ -32,9 +32,9 @@ class Theme extends Fluent
     public $positions = [];
 
     /**
-     * @var
+     * @var string
      */
-    private $type;
+    public $type;
 
     /**
      * Theme constructor.
