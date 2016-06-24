@@ -87,7 +87,7 @@ class CollectionRepository implements Repository
             throw new \Exception('Invalid theme configuration: ' . $file->getRealPath());
         }
 
-        $this->themes[$theme['type'].'.'.$theme['theme']] = new Theme(
+        $this->themes[$theme['type'] . '.' . $theme['theme']] = new Theme(
             $theme['name'],
             $theme['theme'],
             $theme['type'],
@@ -123,13 +123,14 @@ class CollectionRepository implements Repository
      * Find or fail a theme.
      *
      * @param string $theme
+     * @param string $type
      * @return \Yajra\CMS\Themes\Theme
      * @throws \Yajra\CMS\Themes\Exceptions\ThemeNotFoundException
      */
-    public function findOrFail($theme)
+    public function findOrFail($theme, $type = 'frontend')
     {
-        if (in_array($theme, array_keys($this->themes))) {
-            return $this->themes[$theme];
+        if (in_array($type . '.' . $theme, array_keys($this->themes))) {
+            return $this->themes[$type . '.' . $theme];
         }
 
         throw new ThemeNotFoundException('Theme not found!');

@@ -36,10 +36,11 @@ interface Repository
      * Find or fail a theme.
      *
      * @param string $theme
+     * @param string $type
      * @return \Yajra\CMS\Themes\Theme
      * @throws \Yajra\CMS\Themes\Exceptions\ThemeNotFoundException
      */
-    public function findOrFail($theme);
+    public function findOrFail($theme, $type = 'frontend');
 
     /**
      * Uninstall a theme.
