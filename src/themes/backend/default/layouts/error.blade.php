@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    @include('system.meta')
-    {{ Asset::css() }}
-    @stack('styles')
+    {{Asset::css()}}
+    <link rel="stylesheet" href="/themes/admin-lte/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/themes/admin-lte/css/skins/skin-{{config('site.admin_theme')}}.css">
     <style>
         h1 {
             font-size: 120px;

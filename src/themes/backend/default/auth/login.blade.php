@@ -2,6 +2,7 @@
 <html>
 <head>
     @include('system.meta')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
     {{ Asset::css() }}
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet" type="text/css"/>
@@ -62,6 +63,9 @@
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
 {{ Asset::js() }}
 <script src="{{ asset('js/jquery.backstretch.min.js') }}"></script>
 <script>
