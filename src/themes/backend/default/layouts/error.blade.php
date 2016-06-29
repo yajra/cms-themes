@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{Asset::css()}}
-    <link rel="stylesheet" href="/themes/admin-lte/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="/themes/admin-lte/css/skins/skin-{{config('site.admin_theme')}}.css">
+    @include('system.meta')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    {{ Asset::css() }}
+    <link rel="stylesheet" href="{{asset('themes/admin-lte/css/AdminLTE.min.css')}}">
+    <link rel="stylesheet" href="{{asset('themes/admin-lte/css/skins/skin-'.config('site.admin_theme').'.css')}}">
     <style>
         h1 {
             font-size: 120px;
@@ -17,12 +20,12 @@
     <![endif]-->
 </head>
 <body class="@yield('body')">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                @yield('content')
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            @yield('content')
         </div>
     </div>
+</div>
 </body>
 </html>
