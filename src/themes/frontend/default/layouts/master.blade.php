@@ -75,6 +75,12 @@
     </div>
 </nav>
 
+@if(Widget::group('breadcrumb')->any())
+    <div class="container">
+        @widgetGroup('breadcrumb')
+    </div>
+@endif
+
 @if(Widget::group('header')->any())
     <header>
         <div class="container">
