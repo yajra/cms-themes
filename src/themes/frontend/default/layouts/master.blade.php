@@ -75,12 +75,6 @@
     </div>
 </nav>
 
-@if(Widget::group('breadcrumb')->any())
-    <div class="container">
-        @widgetGroup('breadcrumb')
-    </div>
-@endif
-
 @if(Widget::group('header')->any())
     <header>
         <div class="container">
@@ -97,16 +91,28 @@
             <div class="col-md-3">@widgetGroup('left')</div>
         @endif
         @if(Widget::group('left')->any() && Widget::group('right')->any())
-            <div class="col-md-6">@yield('content')</div>
+            <div class="col-md-6">
+                @include('partials.breadcrumb')
+                @yield('content')
+            </div>
         @endif
         @if(Widget::group('left')->isEmpty() && Widget::group('right')->isEmpty())
-            <div class="col-md-12">@yield('content')</div>
+            <div class="col-md-12">
+                @include('partials.breadcrumb')
+                @yield('content')
+            </div>
         @endif
         @if(Widget::group('left')->isEmpty() && Widget::group('right')->any())
-            <div class="col-md-9">@yield('content')</div>
+            <div class="col-md-9">
+                @include('partials.breadcrumb')
+                @yield('content')
+            </div>
         @endif
         @if(Widget::group('left')->any() && Widget::group('right')->isEmpty())
-            <div class="col-md-9">@yield('content')</div>
+            <div class="col-md-9">
+                @include('partials.breadcrumb')
+                @yield('content')
+            </div>
         @endif
         @if(Widget::group('right')->any())
             <div class="col-md-3">@widgetGroup('right')</div>
