@@ -66,7 +66,7 @@ class Theme extends Fluent
      */
     public function isDefault()
     {
-        return $this->theme == config('theme.frontend', 'default');
+        return $this->theme == config('themes.frontend', 'default');
     }
 
     /**
