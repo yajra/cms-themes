@@ -24,6 +24,14 @@ class ThemeViewFinder extends FileViewFinder
 
         array_unshift($this->paths, $this->basePath);
     }
+
+    /**
+     * Remove base path.
+     */
+    public function removeBasePath()
+    {
+        unset($this->paths[0]);
+    }
 }
 
 
