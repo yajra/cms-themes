@@ -50,7 +50,7 @@ class ThemesController extends Controller
         ]);
 
         /** @var Configuration $config */
-        $config        = Configuration::query()->firstOrCreate(['key' => 'theme.frontend']);
+        $config        = Configuration::query()->firstOrCreate(['key' => 'themes.frontend']);
         $config->value = $request->get('theme');
         $config->save();
 
