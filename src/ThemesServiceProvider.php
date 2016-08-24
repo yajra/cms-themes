@@ -69,7 +69,13 @@ class ThemesServiceProvider extends ServiceProvider
         /** @var \Illuminate\Routing\Router $router */
         $router = $this->app['router'];
         $router->group(['prefix' => 'administrator', 'middleware' => 'administrator'], function () use ($router) {
-            $router->resource('themes', ThemesController::class);
+            $router->get('themes', ThemesController::class . '@index')->name('administrator.themes.index');
+            $router->get('themes/create', ThemesController::class . '@create')->name('administrator.themes.create');
+            $router->post('themes', ThemesController::class . '@store')->name('administrator.themes.store');
+            $router->get('themes/{theme}', ThemesController::class . '@edit')->name('administrator.themes.edit');
+            $router->put('themes/{theme}', ThemesController::class . '@update')->name('administrator.themes.update');
+            $router->delete('themes/{theme}', ThemesController::class . '@destroy')->name('administrator.themes.destroy');
+
         });
     }
 
