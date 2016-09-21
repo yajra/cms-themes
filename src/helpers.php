@@ -5,10 +5,10 @@ if (! function_exists('theme_asset')) {
      * Get theme public path.
      *
      * @param string $path
-     * @param bool $secure
+     * @param bool|null $secure
      * @return string
      */
-    function theme_asset($path = '', $secure = false)
+    function theme_asset($path = '', $secure = null)
     {
         $path = $path ? DIRECTORY_SEPARATOR . $path : $path;
 
