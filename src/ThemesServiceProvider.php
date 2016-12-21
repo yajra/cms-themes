@@ -47,8 +47,6 @@ class ThemesServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/resources/views' => resource_path('views/vendor/themes'),
-            __DIR__ . '/themes/backend'  => config('themes.path.backend'),
-            __DIR__ . '/themes/frontend' => config('themes.path.frontend'),
         ], 'cms-themes');
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'themes');
     }
@@ -74,8 +72,8 @@ class ThemesServiceProvider extends ServiceProvider
             $router->post('themes', ThemesController::class . '@store')->name('administrator.themes.store');
             $router->get('themes/{theme}', ThemesController::class . '@edit')->name('administrator.themes.edit');
             $router->put('themes/{theme}', ThemesController::class . '@update')->name('administrator.themes.update');
-            $router->delete('themes/{theme}', ThemesController::class . '@destroy')->name('administrator.themes.destroy');
-
+            $router->delete('themes/{theme}', ThemesController::class . '@destroy')
+                   ->name('administrator.themes.destroy');
         });
     }
 
