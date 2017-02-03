@@ -2,6 +2,9 @@
 
 All Notable changes to `cms-themes` will be documented in this file
 
+## v2.3.0 - 2017-02-03
+- Add support for CMS Core 3.0 - Laravel 5.4.
+
 ## v2.2.0 - 2017-01-05
 - Add github templates.
 - Fix git attributes.
