@@ -2,6 +2,9 @@
 
 All Notable changes to `cms-themes` will be documented in this file
 
+## v2.4.1 - 2017-07-05
+- Add support for cms-core 4.*
+
 ## v2.4.0 - 2017-05-26
 - Add middleware to change theme on runtime.
 - Merge cms-core ThemeChanger middleware updates.
