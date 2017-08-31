@@ -18,7 +18,12 @@ class ThemesServiceProvider extends ServiceProvider
     {
         /** @var \Illuminate\View\Factory $view */
         $view = $this->app['view'];
+        $finder = $view->getFinder();
+        $hints = $finder->getHints();
         $view->setFinder($this->app['themes.view.finder']);
+        foreach ($hints as $namespace => $path) {
+            $view->addNamespace($namespace, $path);
+        }
 
         $this->registerConfig();
         $this->registerViews();
