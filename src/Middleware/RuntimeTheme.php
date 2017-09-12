@@ -1,6 +1,6 @@
 <?php
 
-namespace Yajra\CMS\Themes;
+namespace Yajra\CMS\Themes\Middleware;
 
 use Closure;
 use Yajra\CMS\Themes\Facades\Theme;

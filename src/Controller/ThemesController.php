@@ -1,6 +1,6 @@
 <?php
 
-namespace Yajra\CMS\Themes;
+namespace Yajra\CMS\Themes\Controller;
 
 use Illuminate\Http\Request;
 use Yajra\CMS\Entities\Configuration;

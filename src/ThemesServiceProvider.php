@@ -4,6 +4,7 @@ namespace Yajra\CMS\Themes;
 
 use Illuminate\Support\ServiceProvider;
 use Symfony\Component\Finder\Finder;
+use Yajra\CMS\Themes\Controller\ThemesController;
 use Yajra\CMS\Themes\Repositories\CollectionRepository;
 use Yajra\CMS\Themes\Repositories\Repository;
 
