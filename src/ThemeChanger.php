@@ -3,6 +3,7 @@
 namespace Yajra\CMS\Themes;
 
 use Closure;
+use Yajra\CMS\Themes\Facades\Theme;
 
 class ThemeChanger
 {
@@ -10,18 +11,13 @@ class ThemeChanger
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \Closure $next
+     * @param  \Closure                 $next
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
         if ($theme = $request->query('cms-theme')) {
-            $finder   = app('themes.view.finder');
-            $basePath = config('themes.path.frontend', base_path('themes/frontend'));
-            $finder->removeBasePath();
-            $finder->setBasePath($basePath . DIRECTORY_SEPARATOR . $theme);
-
-            config(['themes.frontend' => $theme]);
+            Theme::use($theme);
         }
 
         return $next($request);

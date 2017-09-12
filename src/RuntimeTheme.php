@@ -3,6 +3,7 @@
 namespace Yajra\CMS\Themes;
 
 use Closure;
+use Yajra\CMS\Themes\Facades\Theme;
 
 class RuntimeTheme
 {
@@ -16,14 +17,7 @@ class RuntimeTheme
      */
     public function handle($request, Closure $next, $theme = null)
     {
-        $theme = $theme ?: config('themes.frontend', 'default');
-
-        $finder   = app('themes.view.finder');
-        $basePath = config('themes.path.frontend', base_path('themes/frontend'));
-        $finder->removeBasePath();
-        $finder->setBasePath($basePath . DIRECTORY_SEPARATOR . $theme);
-
-        config(['themes.frontend' => $theme]);
+        Theme::use($theme);
 
         return $next($request);
     }
