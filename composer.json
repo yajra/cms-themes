@@ -17,6 +17,7 @@
         }
     ],
     "require": {
+        "php": ">=7.0.0",
         "yajra/cms-core": "4.*"
     },
     "require-dev": {
@@ -34,9 +35,6 @@
         "psr-4": {
             "Yajra\\CMS\\Themes\\Test\\": "tests"
         }
-    },
-    "scripts": {
-        "test": "phpunit"
     },
     "extra": {
         "branch-alias": {
