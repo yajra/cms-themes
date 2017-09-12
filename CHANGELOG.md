@@ -2,6 +2,9 @@
 
 All Notable changes to `cms-themes` will be documented in this file
 
+## v2.6.0 - 2017-09-12
+- Move middleware and controller to own folder.
+
 ## v2.5.0 - 2017-09-12
 - Fix support for Laravel 5.5 package discovery.
 - Add Theme Facade.
