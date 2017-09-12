@@ -2,6 +2,12 @@
 
 All Notable changes to `cms-themes` will be documented in this file
 
+## v2.5.0 - 2017-09-12
+- Fix support for Laravel 5.5 package discovery.
+- Add Theme Facade.
+- Refactor middleware and use facade to set the theme.
+- Drop support for v2.x & 3.x.
+
 ## v2.4.3 - 2017-08-31
 - Add support for Laravel 5.5 package discovery.
 
