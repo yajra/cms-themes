@@ -17,11 +17,10 @@
         }
     ],
     "require": {
-        "yajra/cms-core": "2.*|3.*|4.*"
+        "yajra/cms-core": "4.*"
     },
     "require-dev": {
-        "phpunit/phpunit" : "4.*",
-        "scrutinizer/ocular": "~1.1"
+        "phpunit/phpunit" : "6.*"
     },
     "autoload": {
         "psr-4": {
@@ -45,7 +44,10 @@
         },
         "laravel": {
             "providers": [
-                "Yajra\\Acl\\AclServiceProvider"
+                "Yajra\\CMS\\Themes\\ThemesServiceProvider"
+            ],
+            "facades": [
+                "Yajra\\CMS\\Themes\\Facades\\Theme"
             ]
         }
     }

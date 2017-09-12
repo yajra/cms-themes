@@ -17,9 +17,9 @@ class ThemesServiceProvider extends ServiceProvider
     public function boot()
     {
         /** @var \Illuminate\View\Factory $view */
-        $view = $this->app['view'];
+        $view   = $this->app['view'];
         $finder = $view->getFinder();
-        $hints = $finder->getHints();
+        $hints  = $finder->getHints();
         $view->setFinder($this->app['themes.view.finder']);
         foreach ($hints as $namespace => $path) {
             $view->addNamespace($namespace, $path);
@@ -113,5 +113,16 @@ class ThemesServiceProvider extends ServiceProvider
         });
 
         $this->app->alias('themes', Repository::class);
+    }
+
+    /**
+     * @return array
+     */
+    public function provides()
+    {
+        return [
+            'themes',
+            'themes.view.finder',
+        ];
     }
 }
