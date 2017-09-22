@@ -17,15 +17,17 @@ class ThemeViewFinder extends FileViewFinder
      * Use the given theme as the current theme.
      *
      * @param string $theme
+     * @param bool   $frontend
      */
-    public function use($theme)
+    public function use($theme, $frontend = true)
     {
-        $theme    = $theme ?: config('themes.frontend', 'default');
-        $basePath = config('themes.path.frontend', base_path('themes/frontend'));
+        $key      = $frontend ? 'frontend' : 'backend';
+        $theme    = $theme ?: config('themes.' . $key, 'default');
+        $basePath = config('themes.path.' . $key, base_path('themes/' . $key));
         $this->removeBasePath();
         $this->setBasePath($basePath . DIRECTORY_SEPARATOR . $theme);
 
-        config(['themes.frontend' => $theme]);
+        config(['themes.' . $key => $theme]);
     }
 
     /**
