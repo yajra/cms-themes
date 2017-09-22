@@ -2,6 +2,9 @@
 
 All Notable changes to `cms-themes` will be documented in this file
 
+## v2.7.0 - 2017-09-22
+- Add option to use theme for frontend or backend.
+
 ## v2.6.0 - 2017-09-12
 - Move middleware and controller to own folder.
 
